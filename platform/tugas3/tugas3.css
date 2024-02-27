@@ -1,0 +1,35 @@
+.container{
+    width: 800px;
+    margin :auto;
+    background-color: #bab4b4;
+}
+
+.header{
+    padding: 20px
+}
+
+.header .judul{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.header li{
+    display: inline-block;
+}
+
+.gambar{
+    height: 450px;
+    background-image: url(cigre.webp);
+    background-position: 0 0 px;
+    background-size: cover;
+}
+
+.content h2{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.content .penulis{
+    font-size: 11px;
+    margin-top: -20px;
+}
