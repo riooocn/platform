@@ -1,7 +1,43 @@
+.containerUtama{
+    width: auto; /* Lebar 100% dari viewport */
+    height: auto; /* Tinggi 100% dari viewport */
+    background-color: rgb(22, 148, 73);
+}
+
+.container3{
+    width: 800px;
+    margin :auto;
+    border: none;
+}
+
+.container4{
+    width: 800px;
+    margin :auto;
+    border: none;
+}
+
+.gambarHome{
+    height: 600px;
+    background-image: url(homee.png);
+    background-position: 0 0 px;
+    background-size: cover;
+}
+
+.container2{
+    width: 307px;
+    height: 800px;
+    position: fixed ;
+    background-color:rgb(77, 176, 88);
+    margin-top : -1960px;
+    margin-left: -8px;
+    display: flex;
+    border: none;
+}
+
 .container{
     width: 800px;
     margin :auto;
-    background-color: #bab4b4;
+    background-color:rgb(65, 161, 76);;
 }
 
 .header{
@@ -11,10 +47,13 @@
 .header .judul{
     font-size: 40px;
     font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color :rgb(0, 0, 0);
 }
 
 .header li{
     display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .gambar{
@@ -27,9 +66,43 @@
 .content h2{
     font-size: 28px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .content .penulis{
     font-size: 11px;
     margin-top: -20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.content .isi {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+}
+
+.container2 ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.container2 ul li a {
+    color: #C1FF72;
+    text-decoration: none;
+    padding: 10px 20px;
+    display:inline-block;
+    margin-left: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+.container2 ul li a.active {
+    background-color: #555;
+  }
+  
+.container2 ul li a:hover {
+    background-color: #378c37;
+  }
+  
+  
