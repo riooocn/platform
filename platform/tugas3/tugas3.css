@@ -1,7 +1,10 @@
+
 .containerUtama{
     width: auto; /* Lebar 100% dari viewport */
     height: auto; /* Tinggi 100% dari viewport */
     background-color: rgb(22, 148, 73);
+    margin: 0;
+    padding: 0;
 }
 
 .container3{
@@ -21,14 +24,15 @@
     background-image: url(homee.png);
     background-position: 0 0 px;
     background-size: cover;
+    width: 810px;
 }
 
 .container2{
-    width: 307px;
-    height: 800px;
+    width: 320px;
+    height: 1000px;
     position: fixed ;
     background-color:rgb(77, 176, 88);
-    margin-top : -1960px;
+    margin-top : -2110px;
     margin-left: -8px;
     display: flex;
     border: none;
@@ -38,6 +42,14 @@
     width: 800px;
     margin :auto;
     background-color:rgb(65, 161, 76);;
+    padding-left: 20px;
+}
+
+.contain{
+    width: 800px;
+    margin :auto;
+    background-color:rgb(65, 161, 76);;
+    padding-left: 10px;
 }
 
 .header{
@@ -59,6 +71,13 @@
 .gambar{
     height: 450px;
     background-image: url(cigre.webp);
+    background-position: 0 0 px;
+    background-size: cover;
+}
+
+.galeri{
+    height: 450px;
+    background-image: url(gracia.jpeg);
     background-position: 0 0 px;
     background-size: cover;
 }
