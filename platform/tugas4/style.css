@@ -1,0 +1,12 @@
+label {
+    display: inline-flex; /* Membuat label dan input field tampil dalam satu baris */
+    width: 100px; /* Menentukan lebar label */
+    padding-right: 10px; /* Menambahkan jarak kanan pada label */
+    text-align: right; /* Menyelaraskan teks label ke kanan */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 200px; /* Menentukan lebar input field */
+    padding: 5px; /* Menambahkan jarak kiri dan kanan pada input field */
+}
