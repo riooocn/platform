@@ -7,7 +7,7 @@ body {
 .contain {
     width: 10cm;
     height: 10cm;
-    background-color: aqua;
+    background-color: rgb(159, 159, 159);
     padding: 20px;
     margin-left: 10%;
 }
