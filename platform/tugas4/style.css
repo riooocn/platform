@@ -1,12 +1,33 @@
+body {
+    width: 50cm;
+    height: 50cm;
+    overflow-x: hidden;
+}
+
+.contain {
+    width: 10cm;
+    height: 10cm;
+    background-color: aqua;
+    padding: 20px;
+    margin-left: 10%;
+}
+
+.form-group {
+    display: flex;
+    padding: 5px;
+}
+
 label {
-    display: inline-flex; /* Membuat label dan input field tampil dalam satu baris */
-    width: 100px; /* Menentukan lebar label */
-    padding-right: 10px; /* Menambahkan jarak kanan pada label */
-    text-align: right; /* Menyelaraskan teks label ke kanan */
+    flex: 1;
 }
 
 input[type="text"],
 input[type="number"] {
-    width: 200px; /* Menentukan lebar input field */
-    padding: 5px; /* Menambahkan jarak kiri dan kanan pada input field */
+    flex: 2;
+    padding: 3px;
+}
+
+#hobi {
+    padding-left: -270cm;
+    flex: 2;
 }
