@@ -12,7 +12,7 @@ function tombolTekan() {
     var nama = inputNama.value.trim();
     pilihan = inputPilihan.value;
     if (nama == '' || pilihan == '') {
-        alert('form tidak boleh kosong');
+        alert('Form Tidak Boleh Kosong');
     } else {
         inputPilih();
     }
@@ -44,7 +44,7 @@ function inputPilih() {
         container.appendChild(pilih);
     }
     const ok = document.createElement('button');
-    ok.type = 'submit';
+    ok.type = 'SUBMIT';
     ok.setAttribute('id', 'btnOK');
     ok.textContent = 'OK';
     container.appendChild(ok);
