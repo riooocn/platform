@@ -6,15 +6,16 @@ body {
 
 .contain {
     width: 10cm;
-    height: 10cm;
+    height: auto;
     background-color: rgb(159, 159, 159);
-    padding: 20px;
-    margin-left: 10%;
+    padding: 40px;
+    margin: 0px auto;
 }
 
 .form-group {
     display: flex;
     padding: 5px;
+    align-items: center;
 }
 
 label {

@@ -3,15 +3,15 @@ var inputPilihan = document.querySelector('#pilihan');
 var container = document.querySelector('.contain')
 const btn = document.querySelector('#btn');
 
-var tamp = [];
+var temp = [];
 var pilihan;
 
 btn.addEventListener('click', tombolTekan);
 
 function tombolTekan() {
-    var nama = inputNama.value.trim();
+    var name = inputNama.value.trim();
     pilihan = inputPilihan.value;
-    if (nama == '' || pilihan == '') {
+    if (name == '' || pilihan == '') {
         alert('Form Tidak Boleh Kosong');
     } else {
         inputPilih();
@@ -53,7 +53,7 @@ function inputPilih() {
     okb.addEventListener('click', function(e) {
         const inp = document.querySelectorAll('[id^=pilihan]')
         for (let index = 0; index < inp.length; index++) {
-            tamp[index] = inp[index].value;
+            temp[index] = inp[index].value;
 
         }
         pilihPilihan(); 
@@ -73,9 +73,9 @@ function pilihPilihan() {
     pilihanSelect.setAttribute('id', 'pilihan');
 
     // Menggunakan pilihan yang disiapkan oleh pengguna
-    for (let i = 0; i < tamp.length; i++) {
+    for (let i = 0; i < temp.length; i++) {
         const optionElement = document.createElement('option');
-        optionElement.textContent = tamp[i];
+        optionElement.textContent = temp[i];
         pilihanSelect.appendChild(optionElement);
     }
 
@@ -91,20 +91,20 @@ function pilihPilihan() {
 
     const tombol_OK = document.querySelector('#btn_ok');
     tombol_OK.addEventListener('click', function(e) {
-    const nama = inputNama.value;
-    const jmlpil = tamp.length;
+    const name = inputNama.value;
+    const jmlpil = temp.length;
     var txtARy = '';
 
-    for (let i = 0; i < tamp.length; i++) {
-        txtARy += tamp[i];
-        if (i !== tamp.length - 1) {
+    for (let i = 0; i < temp.length; i++) {
+        txtARy += temp[i];
+        if (i !== temp.length - 1) {
             txtARy += ', ';
         }
     }
 
     const pilihan = document.getElementById('pilihan');
     const selectedPilihan = pilihan.value;
-    const txt = "<p> Hallo, nama saya " + nama + ", saya mempunyai sejumlah " + jmlpil + " pilihan yaitu " + txtARy + ", dan saya memilih " + selectedPilihan + "</p>";
+    const txt = "<p> Hallo, nama saya " + name + ", saya mempunyai sejumlah " + jmlpil + " pilihan yaitu " + txtARy + ", dan saya memilih " + selectedPilihan + "</p>";
     container.innerHTML = txt;
 });
 
