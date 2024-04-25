@@ -15,6 +15,14 @@ function tambahAkun($data) {
     global $conn;
     $username = $data['username'];
     $password = $data['password'];
+    $confirm_password = $data['confirm_password'];
+
+    // Periksa apakah password dan konfirmasi password sama
+    if ($password !== $confirm_password) {
+        echo "<script>alert('Password dan konfirmasi password tidak sama.');</script>";
+        return; // Kembali tanpa melakukan registrasi
+    }
+
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO user (username, password) VALUES ('$username', '$hashed_password')";
@@ -49,7 +57,12 @@ function tambahAkun($data) {
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+            </div>
             <button type="submit" class="btn btn-primary" name="submitbtn">Register</button>
+            <a href="login.php" class="btn btn-secondary">Kembali ke Login</a>
         </form>
     </div>
 </body>
