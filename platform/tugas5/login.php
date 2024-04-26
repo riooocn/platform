@@ -26,13 +26,16 @@ function login($data) {
         if (password_verify($password, $row["password"])) {
             $_SESSION["login"] = true;
             $_SESSION['user_id'] = $row['id'];
-            header("Location: todoList.php");
+            echo "<script>alert('Login berhasil.');</script>";
+            echo "<script>window.location.href = 'todoList.php';</script>"; // Redirect setelah pesan muncul
             exit();
         } else {
             echo "<script>alert('Password salah.');</script>";
         }
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
