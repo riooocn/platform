@@ -15,13 +15,33 @@ if (isset($_POST['logoutbtn'])) {
 
 // Tambahkan todo
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['todolist'])) {
-    $todo = $_POST["todolist"];
-    $status = "Pending";
-    $user_id = $_SESSION['user_id'];
+    // Memeriksa apakah form telah diisi
+    if(empty($_POST['todolist'])) {
+        echo "<script>alert('Form harus diisi terlebih dahulu.');</script>";
+    } else {
+        $todo = $_POST["todolist"];
+        $status = "Pending";
+        $user_id = $_SESSION['user_id'];
 
-    $sql = "INSERT INTO todo (todolist, status, user_id) VALUES ('$todo', '$status', '$user_id')";
-    $conn->query($sql);
-}
+        // Memeriksa apakah todo yang sama sudah ada
+        $check_sql = "SELECT * FROM todo WHERE todolist = '$todo' AND user_id = '$user_id'";
+        $result = $conn->query($check_sql);
+
+        if ($result->num_rows > 0) {
+            echo "<script>alert('Todo yang sama sudah ada.');</script>";
+        } else {
+            // Menjalankan query untuk menambahkan todo baru jika semua syarat terpenuhi
+            $sql = "INSERT INTO todo (todolist, status, user_id) VALUES ('$todo', '$status', '$user_id')";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "<script>alert('Todo berhasil ditambahkan.');</script>";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+    }
+}  
+
 
 // Hapus todo
 if (isset($_POST['delete'])) {
