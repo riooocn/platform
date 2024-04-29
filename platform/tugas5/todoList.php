@@ -16,7 +16,7 @@ if (isset($_POST['logoutbtn'])) {
 // Tambahkan todo
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['todolist'])) {
     // Memeriksa apakah form telah diisi
-    if(empty($_POST['todolist'])) {
+    if (empty($_POST['todolist'])) {
         echo "<script>alert('Form harus diisi terlebih dahulu.');</script>";
     } else {
         $todo = $_POST["todolist"];
@@ -40,8 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['todolist'])) {
             }
         }
     }
-}  
+}
 
+
+// Update status todo menjadi 'Selesai'
+if (isset($_POST['status'])) {
+    $id_todo = $_POST["status"];
+    $sql = "UPDATE todo SET status='Selesai' WHERE id_todo=$id_todo";
+    $conn->query($sql);
+}
 
 // Hapus todo
 if (isset($_POST['delete'])) {
@@ -64,6 +71,13 @@ $result = $conn->query($sql);
     <title>Todo List</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .strikethrough {
+            text-decoration: line-through;
+            color: #808080;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -77,10 +91,12 @@ $result = $conn->query($sql);
             <?php
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo "<li class='list-group-item'>" . $row["todolist"] . " - Status: " . $row["status"] . "
+                    $class = ($row["status"] == 'Selesai') ? 'strikethrough' : '';
+                    echo "<li class='list-group-item $class'>" . $row["todolist"] . " - Status: " . $row["status"] . "
                           <form action='' method='POST' style='display: inline;'>
                             <input type='hidden' name='id_todo' value='" . $row["id_todo"] . "'>
                             <button type='submit' name='delete' class='btn btn-danger btn-sm ml-2'>Delete</button>
+                            <button type='submit' name='status' value='" . $row["id_todo"] . "' class='btn btn-success btn-sm ml-2'>Selesai</button>
                           </form>
                           </li>";
                 }
