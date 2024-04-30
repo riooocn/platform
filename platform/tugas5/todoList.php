@@ -42,7 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['todolist'])) {
     }
 }
 
-
 // Update status todo menjadi 'Selesai'
 if (isset($_POST['status'])) {
     $id_todo = $_POST["status"];
@@ -73,9 +72,10 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <style>
+        /* Custom CSS untuk menampilkan todo yang telah selesai dengan garis coret */
         .strikethrough {
             text-decoration: line-through;
-            color: #808080;
+            color: #808080; /* Warna abu-abu untuk todo yang telah selesai */
         }
     </style>
 </head>
@@ -91,6 +91,7 @@ $result = $conn->query($sql);
             <?php
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                    // Tambahkan class 'strikethrough' jika todo telah selesai
                     $class = ($row["status"] == 'Selesai') ? 'strikethrough' : '';
                     echo "<li class='list-group-item $class'>" . $row["todolist"] . " - Status: " . $row["status"] . "
                           <form action='' method='POST' style='display: inline;'>
