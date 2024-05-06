@@ -46,10 +46,16 @@ function login($data) {
     <title>Login</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles */
+        .container {
+            max-width: 400px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4">LOGIN</h2>
+        <h2 class="mb-4 text-center">LOGIN</h2>
         <form action="" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -59,9 +65,12 @@ function login($data) {
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn btn-primary" name="loginbtn">Login</button>
-            <a href="register.php" class="btn btn-secondary">Registrasi</a>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary mr-2" name="loginbtn">Login</button>
+                <a href="register.php" class="btn btn-secondary">Registrasi</a>
+            </div>
         </form>
     </div>
 </body>
 </html>
+
